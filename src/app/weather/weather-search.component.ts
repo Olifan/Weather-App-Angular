@@ -19,8 +19,8 @@ export class WeatherSearchComponent {
     constructor(private _weatherService: WeatherService){}
 
     onSubmit(f: NgForm){
-        console.log(f.value);
-        this._weatherService.searchWeatherData(f.value)
+        console.log(f.value.search);
+        this._weatherService.searchWeatherData(f.value.search)
         .subscribe(
             data => {
                 const weatherItem = new WeatherItem(
