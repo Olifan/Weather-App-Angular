@@ -7,31 +7,58 @@ import { WeatherService } from "./weather.service";
     selector:'weather-search',
     template: `
         <form #f="ngForm" (ngSubmit)="onSubmit(f)"  id="searchForm">
-            <input ngModel type="text" name="search" placeholder="Search for a city" autofocus="" required>
+            <input [(ngModel)]="input" type="text" name="search" placeholder="Search for a city" autofocus="" required>
             <button type="submit">SUBMIT</button>
-            <span class="message"></span>
+            <span class="message">{{message}}</span>
         </form>
     `
 })
 
 export class WeatherSearchComponent {
 
+    message: string = '';
+    input: string = '';
+
+    cities: string[] = [];
+
     constructor(private _weatherService: WeatherService){}
 
-    onSubmit(f: NgForm){
-        console.log(f.value.search);
-        this._weatherService.searchWeatherData(f.value.search)
-        .subscribe(
-            data => {
-                const weatherItem = new WeatherItem(
-                    data.name, 
-                    data.sys.country, 
-                    data.main.temp, 
-                    'icon', 
-                    data.weather[0].description);
+    addCity(){
+        this.cities.push(this.input.toLowerCase());
+        console.log(this.cities);
+    }
 
-                    this._weatherService.addWeatherItem(weatherItem);
-            }
-        )
+    onSubmit(f: NgForm){
+
+        if(this.input === ''){
+            console.log('Sraka');
+            this.message = 'Please search for a valid city 😩';
+        } else if(this.cities.includes(this.input.toLowerCase())){
+            this.message = `You already know the weather for ${this.input}
+            ...otherwise be more specific by providing the country code as well 😉`
+        } 
+        else {
+            console.log(this.input);
+            this.addCity();
+        
+            this._weatherService.searchWeatherData(this.input)
+            .subscribe(
+                data => {
+                    const weatherItem = new WeatherItem(
+                        data.name, 
+                        data.sys.country, 
+                        Math.round(data.main.temp), 
+                        `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.weather[0]["icon"]}.svg`, 
+                        data.weather[0].description);
+
+                        this.message = ''
+                        this._weatherService.addWeatherItem(weatherItem);
+
+                }
+            )
+        }
+        
+        f.reset();
+        
     }
 }

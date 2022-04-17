@@ -15,6 +15,7 @@ export class WeatherService{
     }
 
     addWeatherItem(weatherItem: WeatherItem){
+        
         WEATHER_ITEMS.push(weatherItem);
     }
 
