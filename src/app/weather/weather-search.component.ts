@@ -5,7 +5,8 @@ import { WeatherService } from "./weather.service";
 
 @Component({
     selector:'weather-search',
-    templateUrl: './weather-search.component.html'
+    templateUrl: './weather-search.component.html',
+    styleUrls: ['../app.component.css']
 })
 
 export class WeatherSearchComponent {

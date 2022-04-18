@@ -4,7 +4,8 @@ import { WeatherService } from "./weather.service";
 
 @Component({
     selector: 'weather-list',
-    templateUrl: './weather-list.component.html'
+    templateUrl: './weather-list.component.html',
+    styleUrls:  ['../app.component.css']
 })
 
 export class WeatherListComponent implements OnInit{

@@ -3,7 +3,8 @@ import { WeatherItem } from "./weather-item";
 
 @Component({
     selector: 'weather-item',
-    templateUrl: './weather-item.component.html'
+    templateUrl: './weather-item.component.html',
+    styleUrls: ['../app.component.css']
 })
 
 export class WeatherItemComponent{

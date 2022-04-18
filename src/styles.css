@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
+body{
+    margin: 0;
+}
+
+
+
+
+/* * {
     box-sizing: border-box;
     font-family: 'Roboto';
 }
@@ -117,7 +124,7 @@ form button{
     position: absolute;
     bottom: -12px;
     left: 5%;
-    /* z-index: -1; */
+
     opacity: 0.3;
     border-radius: 20px;
     background: white;
@@ -134,11 +141,11 @@ form button{
 .footer span{
     color: red;
 
-}
+} */
 
 /*-----------------Adaptive---------------------*/
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
 
     body{
         padding: 30px;
@@ -189,4 +196,4 @@ form button{
     .content{
         grid-template-columns: repeat(1, 1fr);
     }
-}
+} */
