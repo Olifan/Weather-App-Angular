@@ -3,21 +3,7 @@ import { WeatherItem } from "./weather-item";
 
 @Component({
     selector: 'weather-item',
-    template: `
-        <div class="cards">
-            <div class="city">
-                <span>{{weatherItem.cityName}}</span>
-                <sup>{{weatherItem.country}}</sup>
-            </div>
-            <div class="temp">
-                {{weatherItem.temperature}}<sup>°C</sup>
-            </div>
-            <div class="weather">
-                <img class="icon" src={{weatherItem.icon}}>
-                <span>{{weatherItem.description}}</span>
-            </div>
-        </div>
-    `,
+    templateUrl: './weather-item.component.html'
 })
 
 export class WeatherItemComponent{

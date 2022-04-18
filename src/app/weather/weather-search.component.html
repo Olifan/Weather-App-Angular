@@ -1,0 +1,5 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)"  id="searchForm">
+    <input [(ngModel)]="input" type="text" name="search" placeholder="Search for a city" autofocus="" required>
+    <button type="submit">SUBMIT</button>
+    <span class="message">{{message}}</span>
+</form>

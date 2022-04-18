@@ -4,11 +4,7 @@ import { WeatherService } from "./weather.service";
 
 @Component({
     selector: 'weather-list',
-    template: `
-        <div class="content">
-            <weather-item *ngFor="let weatherItem of weatherItems" [item]="weatherItem"></weather-item>
-        </div>
-    `
+    templateUrl: './weather-list.component.html'
 })
 
 export class WeatherListComponent implements OnInit{

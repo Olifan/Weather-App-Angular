@@ -5,13 +5,7 @@ import { WeatherService } from "./weather.service";
 
 @Component({
     selector:'weather-search',
-    template: `
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)"  id="searchForm">
-            <input [(ngModel)]="input" type="text" name="search" placeholder="Search for a city" autofocus="" required>
-            <button type="submit">SUBMIT</button>
-            <span class="message">{{message}}</span>
-        </form>
-    `
+    templateUrl: './weather-search.component.html'
 })
 
 export class WeatherSearchComponent {
