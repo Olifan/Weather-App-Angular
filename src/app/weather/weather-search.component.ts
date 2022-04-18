@@ -30,7 +30,7 @@ export class WeatherSearchComponent {
 
     onSubmit(f: NgForm){
 
-        if(this.input === ''){
+        if( !this.input || this.input === ''){
             console.log('Sraka');
             this.message = 'Please search for a valid city 😩';
         } else if(this.cities.includes(this.input.toLowerCase())){
