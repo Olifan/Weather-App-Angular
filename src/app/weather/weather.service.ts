@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { WEATHER_ITEMS } from "./weather.data";
 import { HttpClient } from "@angular/common/http";
 import { WeatherItem } from "./weather-item";
+import { SpinnerComponent } from "./spinner.component";
 
 
 @Injectable()

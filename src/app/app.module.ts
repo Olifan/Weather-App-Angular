@@ -9,6 +9,7 @@ import { WeatherItemComponent } from './weather/weather-item.component';
 import { WeatherListComponent } from './weather/weather-list.component';
 import { WeatherSearchComponent } from './weather/weather-search.component';
 import { WeatherService } from './weather/weather.service';
+import { SpinnerComponent } from './weather/spinner.component';
 
 
 
@@ -17,7 +18,8 @@ import { WeatherService } from './weather/weather.service';
     AppComponent,
     WeatherItemComponent,
     WeatherListComponent,
-    WeatherSearchComponent
+    WeatherSearchComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

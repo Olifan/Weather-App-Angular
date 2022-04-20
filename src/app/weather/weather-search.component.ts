@@ -1,7 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { WeatherItem } from "./weather-item";
 import { WeatherService } from "./weather.service";
+import { SpinnerComponent } from "./spinner.component";
+import { delay } from "rxjs";
 
 @Component({
     selector:'weather-search',
@@ -15,6 +17,9 @@ export class WeatherSearchComponent {
     input: string = '';
 
     cities: string[] = [];
+    
+    @Input()
+    showSpinner: boolean = false;
 
     constructor(private _weatherService: WeatherService){}
 
@@ -35,6 +40,9 @@ export class WeatherSearchComponent {
         else {
             console.log(this.input);
             this.addCity();
+
+            this.showSpinner = true;
+            console.log(this.showSpinner)
         
             this._weatherService.searchWeatherData(this.input)
             .subscribe(
@@ -47,6 +55,7 @@ export class WeatherSearchComponent {
                         data.weather[0].description);
 
                         this.message = ''
+                        this.showSpinner = false;
                         this._weatherService.addWeatherItem(weatherItem);
 
                 }
