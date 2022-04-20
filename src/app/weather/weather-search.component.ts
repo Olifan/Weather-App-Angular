@@ -41,8 +41,7 @@ export class WeatherSearchComponent {
             console.log(this.input);
             this.addCity();
 
-            this.showSpinner = true;
-            console.log(this.showSpinner)
+            this._weatherService.showSpinner = true;
         
             this._weatherService.searchWeatherData(this.input)
             .subscribe(
@@ -55,7 +54,7 @@ export class WeatherSearchComponent {
                         data.weather[0].description);
 
                         this.message = ''
-                        this.showSpinner = false;
+                        this._weatherService.showSpinner = false;
                         this._weatherService.addWeatherItem(weatherItem);
 
                 }

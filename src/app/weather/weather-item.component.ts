@@ -15,6 +15,5 @@ export class WeatherItemComponent{
    @Input('item')
     weatherItem!: WeatherItem;
 
-    showSpinner: boolean = false;
 
 }

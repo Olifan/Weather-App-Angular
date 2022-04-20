@@ -9,9 +9,10 @@ import { WeatherService } from "./weather.service";
 })
 
 export class WeatherListComponent implements OnInit{
+
     weatherItems!: WeatherItem[];
 
-    constructor(private _weatherService: WeatherService){}
+    constructor(public _weatherService: WeatherService){}
 
     ngOnInit(): any {
         this.weatherItems = this._weatherService.getWeatherItems();

@@ -9,7 +9,11 @@ import { SpinnerComponent } from "./spinner.component";
 @Injectable()
 export class WeatherService{
 
+    showSpinner: boolean = false;
+
+
     constructor(private _http: HttpClient){}
+
 
     getWeatherItems(){
         return WEATHER_ITEMS;

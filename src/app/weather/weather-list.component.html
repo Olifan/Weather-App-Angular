@@ -1,3 +1,7 @@
 <div class="content">
+
     <weather-item *ngFor="let weatherItem of weatherItems" [item]="weatherItem"></weather-item>
+    <app-spinner [show]="_weatherService.showSpinner" 
+    style="display: flex; justify-content: center; align-items: center;"></app-spinner>
+
 </div>

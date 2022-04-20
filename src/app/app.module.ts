@@ -10,6 +10,7 @@ import { WeatherListComponent } from './weather/weather-list.component';
 import { WeatherSearchComponent } from './weather/weather-search.component';
 import { WeatherService } from './weather/weather.service';
 import { SpinnerComponent } from './weather/spinner.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -25,7 +26,8 @@ import { SpinnerComponent } from './weather/spinner.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
